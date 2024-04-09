@@ -12,14 +12,14 @@ const ContactUs = () => {
             </div>
            <div>
            <form className='flex flex-col items-center'>
-           <label class="input lg:w-1/2 w-full input-bordered flex items-center mb-4">
-                <input type="email" class="grow" placeholder="Email Address" />
+           <label className="input lg:w-1/2 w-full input-bordered flex items-center mb-4">
+                <input type="email" className="grow" placeholder="Email Address" />
             </label>
-            <label class="input lg:w-1/2 w-full input-bordered flex items-center mb-4">
-                 <input type="text" class="grow" placeholder="Subject" />
+            <label className="input lg:w-1/2 w-full input-bordered flex items-center mb-4">
+                 <input type="text" className="grow" placeholder="Subject" />
             </label>
 
-            <textarea placeholder="Your message" class="textarea mb-4 textarea-bordered textarea-lg lg:w-1/2 w-full " >
+            <textarea placeholder="Your message" className="textarea mb-4 textarea-bordered textarea-lg lg:w-1/2 w-full " >
 
             </textarea>
             <br></br>

@@ -2,12 +2,12 @@ import React from 'react';
 
 const Testimonialcard = ({tm}) => {
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl">
+  <div className="card-body">
     <p>{tm.comment}</p>
-    <div class="card-actions justify-center items-center gap-7">
-            <div class="avatar">
-                    <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+    <div className="card-actions justify-center items-center gap-7">
+            <div className="avatar">
+                    <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={tm.img} />
                     </div>
             </div>
