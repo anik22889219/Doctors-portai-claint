@@ -6,6 +6,7 @@ import AppointmentBenner from './AppointmentBenner';
 import Benner2 from './Benner2';
 import Testimonial from './Testimonial';
 import ContactUs from './ContactUs';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
             <AppointmentBenner></AppointmentBenner>
             <Testimonial></Testimonial>
             <ContactUs></ContactUs>
-
+            <Footer></Footer>
         </section>
     );
 };

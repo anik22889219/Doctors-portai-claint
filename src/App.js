@@ -3,7 +3,7 @@ import { Routes,Route } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import Navber from './Navber/Navber';
-import Footer from './Footer/Footer';
+import Appoinment from './Appoinment/Appoinment';
 
 function App() {
   return (
@@ -11,9 +11,9 @@ function App() {
       <Navber></Navber>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="Home" element={""} />
+        <Route path="appointment" element={<Appoinment></Appoinment>} />
       </Routes>
-      <Footer></Footer>
+      
       
     </div>
   );
