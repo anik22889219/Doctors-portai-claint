@@ -8,6 +8,8 @@ import Login from './Login/Login';
 import Singup from './Login/Singup';
 import Privetrouts from './Login/Privetrouts';
 import About from './About/About';
+import { ToastContainer} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
        
       </Routes>
       
-      
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

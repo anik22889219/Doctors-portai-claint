@@ -1,8 +1,9 @@
 import React from 'react';
 import Slot from './Slot';
 
-const AvailableSlot = ({booked,setSlot}) => {
+const AvailableSlot = ({booked,setSlot,refetch}) => {
     const {service,slots} =booked
+    refetch()
     return (
         <div className='my-20'>
             <h1 className='text-center text-primary text-xl mb-20 '>Available slots for {service}</h1>

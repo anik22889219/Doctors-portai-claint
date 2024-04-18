@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { format } from 'date-fns';
 import AppointmentCard from './AppointmentCard';
 import AvailableSlot from './AvailableSlot';
 import BookingFrom from './BookingFrom';
 
-const AvailableServices = ({selected}) => {
-    const [services,setServices] = useState([]);
+const AvailableServices = ({selected,services,refetch}) => {
+    // const [services,setServices] = useState([]);
     const [booked,setBooked] = useState(null)
     const [slot,setSlot] = useState({})
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/services')
-        .then(res=>res.json())
-        .then(data=>setServices(data))
-    },[])
+   
     return (
         <div>
             <div className='my-16'>
@@ -22,7 +18,7 @@ const AvailableServices = ({selected}) => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center '>
                 {
-                    services.map(service=><AppointmentCard
+                    services?.map(service=><AppointmentCard
                     key={service._id}
                     services={service}
                     setBooked={setBooked}
@@ -35,6 +31,7 @@ const AvailableServices = ({selected}) => {
                     key={booked._id}
                     booked={booked}
                     setSlot={setSlot}
+                    refetch={refetch}
                     ></AvailableSlot>
                 }
             </div>
@@ -45,6 +42,7 @@ const AvailableServices = ({selected}) => {
                     selected={selected}
                     slot={slot}
                     setBooked={setBooked}
+                    refetch={refetch}
                     ></BookingFrom>
                 }
             </div>

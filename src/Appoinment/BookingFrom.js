@@ -2,8 +2,10 @@ import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const BookingFrom = ({booked,selected,slot,setBooked}) => {
+const BookingFrom = ({booked,selected,slot,setBooked,refetch}) => {
   
 const [user]=useAuthState(auth)
 
@@ -11,12 +13,42 @@ const [user]=useAuthState(auth)
     const hendelbooking=(event)=>{
         event.preventDefault();
         const Treatment = booked.service;
+        const serviceId = booked._id
+        const SlotId =slot.id
         const Date = event.target.date.value
         const Slot = event.target.slot.value
         const Name = event.target.name.value
         const Number = event.target.number.value
         const Email = event.target.email.value
-        console.log({ Treatment,Date,Slot,Name,Number,Email})
+        const booking ={
+          Treatment,
+          serviceId,
+          SlotId,
+          Date,
+          Slot,
+          Name,
+          Number,
+          Email
+        }
+        fetch('http://localhost:5000/bookings',{
+          method : "POST",
+          headers : {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(booking),
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.success){
+            toast(`Successfully set an appointment on ${Date} at ${Slot}`)
+            refetch()
+          }
+          else{
+            toast(`Already set an appointment on ${Date} at ${Slot}`)
+
+          }
+        })
+        
         setBooked(null)
     }
     return (

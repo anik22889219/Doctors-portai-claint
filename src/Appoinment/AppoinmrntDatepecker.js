@@ -20,7 +20,6 @@ const AppoinmrntDatepecker = ({selected,setSeleted}) => {
       required
       selected={selected}
       onSelect={setSeleted}
-      
     />
     </div>
   </div>
