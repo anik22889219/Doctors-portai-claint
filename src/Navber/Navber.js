@@ -13,6 +13,11 @@ const Navber = () => {
         <li key={3}><Link to="appointment">Appointment</Link></li>,
         <li key={4}><Link to="reviews">Reviews</Link></li>,
         <li key={7}><Link to="contactus">Contact Us</Link></li>,
+        <li key={9}>
+          {
+            user && <Link to="dashboard">Dashboard</Link>
+          }
+          </li>,
         <li key={8}>
           {
           user ? <button  onClick={async () => {

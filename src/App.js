@@ -10,6 +10,9 @@ import Privetrouts from './Login/Privetrouts';
 import About from './About/About';
 import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Dashboard/Dashboard';
+import MyAppointments from './Dashboard/MyAppointments';
+import MyReaviews from './Dashboard/MyReaviews';
 
 function App() {
   return (
@@ -22,6 +25,13 @@ function App() {
         <Route path="appointment" element={
           <Privetrouts><Appoinment></Appoinment></Privetrouts>
         } />
+        <Route path='dashboard' element={
+          <Privetrouts><Dashboard></Dashboard></Privetrouts>
+        } >
+          <Route index element={<MyAppointments />} />
+          <Route path="reaviews" element={<MyReaviews />} />
+
+        </Route>
         <Route path="about" element={
           <Privetrouts>
             <About></About>
