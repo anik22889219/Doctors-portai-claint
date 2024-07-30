@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const Dashboard = () => {
+  const [user]= useAuthState(auth);
+  const [admin]= useAdmin(user);
     return (
         <div className="drawer lg:drawer-open">
   <input id="side-ber" type="checkbox" className="drawer-toggle" />
@@ -11,7 +16,7 @@ const Dashboard = () => {
         <label htmlFor="side-ber" aria-label="open sidebar" className="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </label>
-      </div> 
+      </div>  
     <Outlet></Outlet>
   </div> 
   <div className="drawer-side">
@@ -20,6 +25,7 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       <li><Link to={""} >My Appointments</Link></li>
       <li><Link to={"reaviews"} >My Reviews</Link></li>
+      {admin && <li><Link to={"users"} >All users</Link></li>}
       
     </ul>
   

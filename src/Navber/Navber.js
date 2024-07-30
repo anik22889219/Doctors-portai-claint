@@ -7,6 +7,7 @@ const Navber = () => {
   const [user, loading, error] = useAuthState(auth);
   const [signOut, sloading, serror] = useSignOut(auth);
 
+
     const navLink = [
         <li key={1}><Link to="/">Home</Link></li>,
         <li key={2}><Link to="about">About</Link></li>,
@@ -24,6 +25,7 @@ const Navber = () => {
             const success = await signOut();
             if (success) {
               alert('You are sign out');
+              localStorage.removeItem('accessToken')
             }
           }} className="">Sing out</button> : <Link to="/login">Login</Link>
          }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle,useCreateUserWithEmailAndPassword,useUpdateProfile,useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loddingbtn from './Loddingbtn';
+import useToken from '../hooks/useToken';
 
 const Singup = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
@@ -18,11 +19,13 @@ const Singup = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
 
     const navigate = useNavigate()
+    const location = useLocation()
+    const [token]= useToken(user ||guser)
      
     if (loading ||gloading) {
         return <Loddingbtn></Loddingbtn> ;
       }
-      if (user ||guser) {
+      if (token) {
         navigate('/appointment')
       }
      
