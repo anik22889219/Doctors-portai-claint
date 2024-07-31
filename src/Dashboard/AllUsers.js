@@ -8,7 +8,7 @@ const AllUsers = () => {
 const {data,isLoading,refetch} = useQuery({
     queryKey: ['users'],
     queryFn:()=>
-    fetch('http://localhost:5000/user',{
+    fetch('https://doctors-portal-server-dufg.onrender.com/user',{
         method:'GET',
         headers: {
             authorization : `Bearer ${localStorage.getItem('accessToken')}`

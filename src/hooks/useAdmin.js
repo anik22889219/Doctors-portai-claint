@@ -7,7 +7,7 @@ const useAdmin = (user) => {
     useEffect(()=>{
         const email = user?.email;
         if(email){
-            fetch(`http://localhost:5000/admin/${email}`,{
+            fetch(`https://doctors-portal-server-dufg.onrender.com/admin/${email}`,{
                 method: 'Get',
                 headers:{
                     "Content-Type": "application/json" ,

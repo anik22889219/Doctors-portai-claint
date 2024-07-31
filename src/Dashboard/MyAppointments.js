@@ -14,7 +14,7 @@ const MyAppointments = () => {
     const { isLoading,data:appointment } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-          fetch(`http://localhost:5000/bookings?email=${user.email}`,{
+          fetch(`https://doctors-portal-server-dufg.onrender.com/bookings?email=${user.email}`,{
             method: 'GET',
             headers:{
               'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const MyAppointments = () => {
 
     // useEffect(()=>{
     //   if(user){
-    //     fetch(`http://localhost:5000/bookings?email=${user.email}`,{
+    //     fetch(`https://doctors-portal-server-dufg.onrender.com/bookings?email=${user.email}`,{
     //       method: 'GET',
     //       headers:{
     //         'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyAppointments = () => {
     // },[user])
       
     
-    // if (!user) return <Loddingbtn></Loddingbtn>
+    if (!user) return <Loddingbtn></Loddingbtn>
     if (isLoading) return <Loddingbtn></Loddingbtn>
     
     return (

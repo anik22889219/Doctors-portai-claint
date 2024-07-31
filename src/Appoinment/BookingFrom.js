@@ -30,7 +30,7 @@ const [user]=useAuthState(auth)
           Number,
           Email
         }
-        fetch('http://localhost:5000/bookings',{
+        fetch('https://doctors-portal-server-dufg.onrender.com/bookings',{
           method : "POST",
           headers : {
             "Content-Type": "application/json"
