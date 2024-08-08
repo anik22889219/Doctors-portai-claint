@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import Loddingbtn from '../Login/Loddingbtn';
 import Users from './Users';
+import MakeAdminModal from './MakeAdminModal';
+import DeleteUserModal from './DeleteUserModal';
 
 const AllUsers = () => {
-
+const [makeAdmin,setMakeAdmin] = useState(null)
+const [deleteAdmin,setDeleteAdmin]= useState(null)
 const {data,isLoading,refetch} = useQuery({
     queryKey: ['users'],
     queryFn:()=>
@@ -43,13 +46,27 @@ if(isLoading){
                     key={d._id}
                     user={d}
                     index={index}
-                    refetch={refetch}
-                    ></Users> )
+                    setMakeAdmin={setMakeAdmin}
+                    setDeleteAdmin={setDeleteAdmin}
+                    ></Users> ) 
                     
                 }
             </tbody>
         
           </table>
+          {
+            makeAdmin && <MakeAdminModal
+            refetch={refetch}
+            user={makeAdmin}
+            >
+            </MakeAdminModal>
+          }
+          {
+            deleteAdmin && <DeleteUserModal
+            refetch={refetch}
+            user={deleteAdmin}
+            ></DeleteUserModal>
+          }
         </div>
                 </div>
             );

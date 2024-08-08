@@ -24,7 +24,7 @@ const ContactUs = () => {
             </textarea>
             <br></br>
 
-            <button className="btn bg-gradient-to-r from-primary to-secondary ">Get Started</button>
+            <button className="btn px-11 text-xl bg-gradient-to-r from-primary to-secondary ">Send</button>
 
            </form>
            </div>

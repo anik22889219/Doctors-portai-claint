@@ -11,7 +11,7 @@ const MyAppointments = () => {
     const [user] =useAuthState(auth); 
     const navigate = useNavigate();
 
-    const { isLoading,data:appointment } = useQuery({
+    const { isLoading,data:appointment,refetch } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
           fetch(`https://doctors-portal-server-dufg.onrender.com/bookings?email=${user.email}`,{
@@ -30,23 +30,11 @@ const MyAppointments = () => {
             return res.json()}
           ),
       })
+      if(!appointment){
+        refetch()
+      }
 
-    // useEffect(()=>{
-    //   if(user){
-    //     fetch(`https://doctors-portal-server-dufg.onrender.com/bookings?email=${user.email}`,{
-    //       method: 'GET',
-    //       headers:{
-    //         'authorization' : `Bearer ${localStorage.getItem('accessToken')}`
-    //       }
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=>setAppointment(data));
-    //   }
-    // },[user])
-      
-    
-    if (!user) return <Loddingbtn></Loddingbtn>
-    if (isLoading) return <Loddingbtn></Loddingbtn>
+    if (isLoading) {return <Loddingbtn></Loddingbtn>}
     
     return (
         <div className='p-9 w-full'>
@@ -70,13 +58,13 @@ const MyAppointments = () => {
     <tbody>
         {
             appointment.map((d,index)=>  
-            <tr key={d._id} className='font-semibold text-2xl'>
+            <tr key={d._id} className='font-semibold text-xl md:text-2xl'>
                 <td>{index + 1}</td> 
                 <td>{d.Name}</td> 
                 <td>{d.Date}</td> 
                 <td>{d.Slot}</td> 
                 <td>{d.Treatment}</td> 
-                <td><button className="btn btn-sm bg-primary uppercase">Pay</button> </td> 
+                <td><button className="btn btn-xs md:btn-sm bg-primary uppercase">Pay</button> </td> 
             </tr>)
         }
     </tbody>

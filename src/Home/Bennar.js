@@ -20,6 +20,6 @@ const Bennar = () => {
   </div>
 </div>
     );
-};
+}; 
 
 export default Bennar;

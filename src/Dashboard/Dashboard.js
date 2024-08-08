@@ -3,10 +3,14 @@ import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import Loddingbtn from '../Login/Loddingbtn';
 
 const Dashboard = () => {
   const [user]= useAuthState(auth);
   const [admin]= useAdmin(user);
+  if(!user){
+    return <Loddingbtn></Loddingbtn>
+  }
     return (
         <div className="drawer lg:drawer-open">
   <input id="side-ber" type="checkbox" className="drawer-toggle" />
@@ -25,7 +29,11 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       <li><Link to={""} >My Appointments</Link></li>
       <li><Link to={"reaviews"} >My Reviews</Link></li>
-      {admin && <li><Link to={"users"} >All users</Link></li>}
+      {admin && <>
+        <li><Link to={"users"} >All users</Link></li>
+        <li><Link to={"addDoctor"} >Add Doctor</Link></li>
+        <li><Link to={"manageDoctors"} >Manage Doctor</Link></li>
+      </>}
       
     </ul>
   

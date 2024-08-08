@@ -41,10 +41,7 @@ const Singup = () => {
         if (susses){
             await updateProfile({displayName})
         }
-        
-        
-
-      }
+       }
     return (
         <div>
          <div className="hero-content flex-col ">

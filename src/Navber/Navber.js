@@ -47,7 +47,7 @@ const Navber = () => {
         {navLink}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Doctors portal</a>
+    <Link to="/"className="btn btn-ghost text-xl">Doctors portal</Link> 
   </div>
   
   <div className="navbar-center hidden lg:flex">
