@@ -13,7 +13,7 @@ const AppoinmrntDatepecker = ({selected,setSeleted}) => {
             backgroundSize:'cover'
         }} className="hero min-h-screen ">
   <div className="hero-content flex-col  lg:flex-row-reverse">
-    <img src={chair} className="max-w-lg rounded-lg shadow-2xl"  alt='chair'/>
+    <img src={chair} className="lg:max-w-lg max-w-full rounded-lg shadow-2xl"  alt='chair'/>
     <div  className='card lg-max-w-lg bg-base-100 shadow-xl lg:me-20'>
     <DayPicker
       mode="single"
