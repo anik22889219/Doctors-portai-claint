@@ -21,7 +21,7 @@ import ManageDoctors from './Dashboard/ManageDoctors';
 
 function App() {
   return (
-    <div className="">
+    <div className="mx-auto">
       <Navber></Navber>
       <Routes>
         <Route path="/" element={<Home />} />

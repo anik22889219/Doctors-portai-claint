@@ -11,7 +11,7 @@ const AppointmentBenner = () => {
             <div className='lg:flex-1'>
                 <img className='cover-full mt-[-150px] hidden lg:block' src={doctor}></img>
             </div>
-            <div className='lg:flex-1 sm:p-16'>
+            <div className='lg:flex-1 text-center lg:text-left p-8 lg:p-16'>
                 <h1 className='mb-3 text-xl text-primary uppercase'>appointment</h1>
                 <h1 className='mb-3 text-3xl text-white capitalize'>make an appointment Today</h1>
                 <p className='mb-3 text-sm text-white'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsumis that it has a more-or-less normal distribution of letters,as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page</p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Testimonialcard = ({tm}) => {
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card lg:w-96 bg-base-100 shadow-xl">
   <div className="card-body">
     <p>{tm.comment}</p>
     <div className="card-actions justify-center items-center gap-7">
