@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -8,6 +8,7 @@ import Loddingbtn from '../Login/Loddingbtn';
 const Dashboard = () => {
   const [user]= useAuthState(auth);
   const [admin]= useAdmin(user);
+  const [open, setOpen] = useState(false)
   if(!user){
     return <Loddingbtn></Loddingbtn>
   }
