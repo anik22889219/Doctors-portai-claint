@@ -19,6 +19,14 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
+
+    const hendelLogin=(event) =>{
+      event.preventDefault();
+      const email= event.target.email.value;
+      const password = event.target.password.value;
+      signInWithEmailAndPassword(email, password)
+
+    }
      useEffect(()=>{
       if (token) {
         navigate(from,{replace:true});
@@ -34,13 +42,8 @@ const Login = () => {
      
 
 
-      const hendelLogin=(event) =>{
-        event.preventDefault();
-        const email= event.target.email.value;
-        const password = event.target.password.value;
-        signInWithEmailAndPassword(email, password)
-
-      }
+      
+      
 
 
     return (
