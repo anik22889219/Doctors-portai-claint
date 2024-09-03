@@ -13,11 +13,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Dashboard/Dashboard';
 import MyAppointments from './Dashboard/MyAppointments';
 import MyReaviews from './Dashboard/MyReaviews';
-import AllUsers from './Dashboard/AllUsers';
+import AllUsers from './AdminPanel/AllUsers';
 import RequireAdmin from './Login/RequireAdmin';
-import AddDoctor from './Dashboard/AddDoctor';
+import AddDoctor from './AdminPanel/AddDoctor';
 import ContactUs from './Home/ContactUs';
-import ManageDoctors from './Dashboard/ManageDoctors';
+import ManageDoctors from './AdminPanel/ManageDoctors';
+import AdminDashboard from './AdminPanel/AdminDashboard';
+import AllBookings from './AdminPanel/AllBookings';
+import ConfirmBookings from './AdminPanel/ConfirmBookings';
 
 function App() {
   return (
@@ -30,14 +33,23 @@ function App() {
         <Route path="appointment" element={
           <Privetrouts><Appoinment></Appoinment></Privetrouts>
         } />
+        <Route path="admin" element={
+          <Privetrouts><AdminDashboard></AdminDashboard></Privetrouts>
+        } >
+          <Route index element={<RequireAdmin><AllBookings /></RequireAdmin>} />
+          <Route path="confirmbokings" element={<RequireAdmin><ConfirmBookings /></RequireAdmin>} />
+          <Route path="users" element={<RequireAdmin><AllUsers /></RequireAdmin>} />
+          <Route path="addDoctor" element={<RequireAdmin><AddDoctor /></RequireAdmin>} />
+          <Route path="manageDoctors" element={<RequireAdmin><ManageDoctors /></RequireAdmin>} />
+
+        </Route>
+          
         <Route path='dashboard' element={
           <Privetrouts><Dashboard></Dashboard></Privetrouts>
         } >
           <Route index element={<MyAppointments />} />
           <Route path="reaviews" element={<MyReaviews />} />
-          <Route path="users" element={<RequireAdmin><AllUsers /></RequireAdmin>} />
-          <Route path="addDoctor" element={<RequireAdmin><AddDoctor /></RequireAdmin>} />
-          <Route path="manageDoctors" element={<RequireAdmin><ManageDoctors /></RequireAdmin>} />
+          
 
         </Route>
         <Route path="about" element={<About></About>} />

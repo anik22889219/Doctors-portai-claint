@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import Loddingbtn from '../Login/Loddingbtn';
-import Users from './Users';
 import MakeAdminModal from './MakeAdminModal';
 import DeleteUserModal from './DeleteUserModal';
+import Users from './Users'
 
 const AllUsers = () => {
 const [makeAdmin,setMakeAdmin] = useState(null)

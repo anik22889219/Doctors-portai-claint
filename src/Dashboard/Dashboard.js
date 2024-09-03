@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import useAdmin from '../hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loddingbtn from '../Login/Loddingbtn';
 
 const Dashboard = () => {
   const [user]= useAuthState(auth);
-  const [admin]= useAdmin(user);
+  
   const [open, setOpen] = useState(false)
   if(!user){
     return <Loddingbtn></Loddingbtn>
@@ -30,11 +29,7 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       <li onClick={()=> setOpen(!open)}><Link to={""} >My Appointments</Link></li>
       <li onClick={()=> setOpen(!open)}><Link to={"reaviews"} >My Reviews</Link></li>
-      {admin && <>
-        <li onClick={()=> setOpen(!open)}><Link to={"users"} >All users</Link></li>
-        <li onClick={()=> setOpen(!open)}><Link to={"addDoctor"} >Add Doctor</Link></li>
-        <li onClick={()=> setOpen(!open)}><Link to={"manageDoctors"} >Manage Doctor</Link></li>
-      </>}
+     
       
     </ul>
   

@@ -1,5 +1,4 @@
 import React from 'react';
-import { toast } from 'react-toastify';
 
 const Users = ({user,index,setDeleteAdmin,setMakeAdmin}) => {
     const {email,role}=user

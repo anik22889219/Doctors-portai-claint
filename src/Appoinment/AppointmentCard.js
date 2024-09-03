@@ -2,7 +2,7 @@ import React from 'react';
 
 const AppointmentCard = ({services,setBooked}) => {
   
-    const {_id,service}= services
+    const {service}= services
     
     return (
         <button onClick={()=>setBooked(services)}  className="card  w-60 lg:card-side bg-base-100 shadow-xl ">

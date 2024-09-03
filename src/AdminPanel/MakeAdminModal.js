@@ -34,7 +34,7 @@ const MakeAdminModal = ({ refetch, user }) => {
                     <div className="modal-action">
                         <label onClick={makeAdmin} htmlFor="Make-admin-modal" className="btn btn-xs md:btn-sm  bg-primary uppercase">confirm</label>
                         <label htmlFor="Make-admin-modal" className="btn btn-xs md:btn-sm  bg-primary uppercase">Close!</label>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
