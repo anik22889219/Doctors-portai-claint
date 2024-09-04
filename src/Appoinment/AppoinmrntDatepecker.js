@@ -5,7 +5,7 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 
 
-const AppoinmrntDatepecker = ({selected,setSeleted}) => {
+const AppoinmrntDatepecker = ({selected,setSeleted,service,scrolling}) => {
     
     return (
         <div style={{
@@ -20,6 +20,7 @@ const AppoinmrntDatepecker = ({selected,setSeleted}) => {
       required
       selected={selected}
       onSelect={setSeleted}
+      onDayClick={()=>scrolling(service)}
     />
     </div>
   </div>

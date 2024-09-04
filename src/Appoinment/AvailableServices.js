@@ -1,17 +1,21 @@
-import React, {  useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import { format } from 'date-fns';
 import AppointmentCard from './AppointmentCard';
 import AvailableSlot from './AvailableSlot';
 import BookingFrom from './BookingFrom';
 
-const AvailableServices = ({selected,services,refetch}) => {
+const AvailableServices = ({selected,services,refetch,service,scrolling,}) => {
+    const slotRef = useRef(service)
+    
     // const [services,setServices] = useState([]);
     const [booked,setBooked] = useState(null)
     const [slot,setSlot] = useState({})
 
+    
+
    
     return (
-        <div>
+        <div ref={service}>
             <div className='my-16'>
             <h1 className='text-center text-primary text-xl '>Available Services on {format(selected, 'PP')}</h1>
             <h1 className='text-center text-accent text-xs '>Pleas select a Service</h1>
@@ -22,6 +26,8 @@ const AvailableServices = ({selected,services,refetch}) => {
                     key={service._id}
                     services={service}
                     setBooked={setBooked}
+                    scrolling={scrolling}
+                    slotRef={slotRef}
                     ></AppointmentCard>)
                 }
             </div>
@@ -32,6 +38,7 @@ const AvailableServices = ({selected,services,refetch}) => {
                     booked={booked}
                     setSlot={setSlot}
                     refetch={refetch}
+                    slotRef={slotRef}
                     ></AvailableSlot>
                 }
             </div>
@@ -40,7 +47,7 @@ const AvailableServices = ({selected,services,refetch}) => {
                     booked && <BookingFrom
                     booked={booked}
                     selected={selected}
-                    slot={slot}
+                    slot={slot} 
                     setBooked={setBooked}
                     refetch={refetch}
                     ></BookingFrom>
