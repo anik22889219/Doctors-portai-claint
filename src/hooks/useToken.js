@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const useToken = (user) => {
     const [token ,setToken] = useState('')
+    const [userLodding,setUserLodding]=useState(false)
     useEffect(()=>{
         const email = user?.user?.email
         const currentuser = {email : email}
@@ -17,10 +18,11 @@ const useToken = (user) => {
                 const accessToken = data.token
                 localStorage.setItem('accessToken',accessToken)
                 setToken(accessToken)})
+                setUserLodding(true);
         }
 
     },[user]);
-    return[token];
+    return[token,userLodding];
 };
 
 export default useToken;

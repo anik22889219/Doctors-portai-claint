@@ -12,15 +12,17 @@ const AdminDashboard = () => {
 
     const navLink = [
         
-            <li onClick={()=> setOpen(!open)}><Link to={""} > Booking Request</Link></li>,
-            <li onClick={()=> setOpen(!open)}><Link to={"confirmbokings"} >Confirm Bookings</Link></li>,
-            <li onClick={()=> setOpen(!open)}><Link to={"users"} >All users</Link></li>,
-            <li onClick={()=> setOpen(!open)}><Link to={"addDoctor"} >Add Doctor</Link></li>,
-            <li onClick={()=> setOpen(!open)}><Link to={"manageDoctors"} >Manage Doctor</Link></li>
+            <li key={1} onClick={()=> setOpen(!open)}><Link to={""} > Booking Request</Link></li>,
+            <li key={2} onClick={()=> setOpen(!open)}><Link to={"confirmbokings"} >Confirm Bookings</Link></li>,
+            <li key={3} onClick={()=> setOpen(!open)}><Link to={"users"} >All users</Link></li>,
+            <li key={4} onClick={()=> setOpen(!open)}><Link to={"addService"} >Add Service</Link></li>,
+            <li key={5} onClick={()=> setOpen(!open)}><Link to={"manageService"} >Manage Service</Link></li>,
+            <li key={6} onClick={()=> setOpen(!open)}><Link to={"addDoctor"} >Add Doctor</Link></li>,
+            <li key={7} onClick={()=> setOpen(!open)}><Link to={"manageDoctors"} >Manage Doctor</Link></li>
           ]
   
 
-
+ 
     return (
      <div>
            <div className="navbar lg:block justify-between flex-col bg-base-100 lg:px-6 ">

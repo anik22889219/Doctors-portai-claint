@@ -13,7 +13,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-    const [token] = useToken(user ||guser)
+    const [token,userLodding] = useToken(user ||guser)
 
     
     const navigate = useNavigate()
@@ -34,7 +34,7 @@ const Login = () => {
      },[token,from,navigate])
      
      
-    if (loading ||gloading) {
+    if (loading ||gloading||userLodding) {
         return <Loddingbtn></Loddingbtn> ;
       }
       

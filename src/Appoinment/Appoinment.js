@@ -26,7 +26,7 @@ const Appoinment = () => {
         queryKey: ['repoData','formatDate'],
         queryFn: () =>
        fetch(`https://doctors-portal-server-dufg.onrender.com/available?date=${formatDate}`)
-        .then(res=>res.json()),
+        .then(res=>res.json()), 
       })
       
       if(isLoading){

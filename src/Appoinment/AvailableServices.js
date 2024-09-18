@@ -14,7 +14,7 @@ const AvailableServices = ({selected,services,refetch,service,scrolling,}) => {
     
 
    
-    return (
+    return ( 
         <div ref={service}>
             <div className='my-16'>
             <h1 className='text-center text-primary text-xl '>Available Services on {format(selected, 'PP')}</h1>

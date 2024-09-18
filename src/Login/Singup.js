@@ -20,15 +20,9 @@ const Singup = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const [token]= useToken(user ||guser)
-     
-    if (loading ||gloading) {
-        return <Loddingbtn></Loddingbtn> ;
-      }
-      if (token) {
-        navigate('/appointment')
-      }
-     
+    const [token,userLodding]= useToken(user ||guser)
+    
+  
 
 
       const hendelSing=async(event) =>{
@@ -42,6 +36,15 @@ const Singup = () => {
             await updateProfile({displayName})
         }
        }
+
+
+       if (token) {
+        navigate('/appointment')
+      }
+     
+      if (loading ||gloading||userLodding) {
+          return <Loddingbtn></Loddingbtn> ;
+        }
     return (
         <div>
          <div className="hero-content flex-col ">

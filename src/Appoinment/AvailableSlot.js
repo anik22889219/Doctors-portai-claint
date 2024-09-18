@@ -15,7 +15,7 @@ const AvailableSlot = ({booked,setSlot,refetch,slotRef}) => {
             key={slot.id}
             slot={slot}
             service={service}
-            setSlot={setSlot}
+            setSlot={setSlot} 
             ></Slot>)
         }
             </div> 

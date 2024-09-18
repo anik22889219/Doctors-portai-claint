@@ -78,13 +78,13 @@ const AddDoctor = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name='name' placeholder="Name" className="input input-bordered input-primary" required />
+                        <input required type="text" name='name' placeholder="Name" className="input input-bordered input-primary"  />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="email" className="input input-bordered input-primary" required />
+                        <input required type="email" name='email' placeholder="email" className="input input-bordered input-primary"  />
                     </div>
                     <div className='from-control'>
                         <label className='label'>
@@ -105,7 +105,7 @@ const AddDoctor = () => {
                         <label className="label">
                             <span className="label-text">Image</span>
                         </label>
-                        <input name='image' type="file" className="file-input file-input-bordered file-input-primary w-full " required /></div>
+                        <input required name='image' type="file" className="file-input file-input-bordered file-input-primary w-full " /></div>
 
 
                     <div className="form-control ">

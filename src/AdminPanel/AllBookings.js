@@ -44,7 +44,7 @@ const AllBookings = () => {
                         </thead>
                         <tbody>
                             {
-                                data.map((d, index) => <tr  className='font-semibold text-xl md:text-2xl'>
+                                data.map((d, index) => <tr key={index} className='font-semibold text-xl md:text-2xl'>
                                     <td >{index + 1}</td>
                                     <td>
                                         <>

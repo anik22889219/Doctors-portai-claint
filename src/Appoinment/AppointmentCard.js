@@ -13,7 +13,7 @@ const AppointmentCard = ({services,setBooked,slotRef,scrolling}) => {
   </div>
 </button>
        </div>
-    );
+    ); 
 };
 
 export default AppointmentCard;
