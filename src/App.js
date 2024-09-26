@@ -23,6 +23,9 @@ import AllBookings from './AdminPanel/AllBookings';
 import ConfirmBookings from './AdminPanel/ConfirmBookings';
 import AddService from './AdminPanel/AddService';
 import ManageService from './AdminPanel/ManageService';
+import Director from './Director/Director';
+import AddDirector from './AdminPanel/AddDirector';
+import MenageDirector from './AdminPanel/MenageDirector';
 
 function App() {
   return (
@@ -45,6 +48,8 @@ function App() {
           <Route path="addService" element={<RequireAdmin><AddService /></RequireAdmin>} />
           <Route path="manageService" element={<RequireAdmin><ManageService /></RequireAdmin>} />
           <Route path="manageDoctors" element={<RequireAdmin><ManageDoctors /></RequireAdmin>} />
+          <Route path="addDirector" element={<RequireAdmin><AddDirector /></RequireAdmin>} />
+          <Route path="manageDirector" element={<RequireAdmin><MenageDirector /></RequireAdmin>} />
 
         </Route>
           
@@ -56,6 +61,8 @@ function App() {
           
 
         </Route>
+
+        <Route path="director" element={<Director/>} />
         <Route path="about" element={<About></About>} />
         <Route path="contactus" element={<ContactUs></ContactUs>} />
 

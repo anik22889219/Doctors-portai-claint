@@ -18,7 +18,9 @@ const AdminDashboard = () => {
             <li key={4} onClick={()=> setOpen(!open)}><Link to={"addService"} >Add Service</Link></li>,
             <li key={5} onClick={()=> setOpen(!open)}><Link to={"manageService"} >Manage Service</Link></li>,
             <li key={6} onClick={()=> setOpen(!open)}><Link to={"addDoctor"} >Add Doctor</Link></li>,
-            <li key={7} onClick={()=> setOpen(!open)}><Link to={"manageDoctors"} >Manage Doctor</Link></li>
+            <li key={7} onClick={()=> setOpen(!open)}><Link to={"manageDoctors"} >Manage Doctor</Link></li>,
+            <li key={8} onClick={()=> setOpen(!open)}><Link to={"addDirector"} >Add Director</Link></li>,
+            <li key={9} onClick={()=> setOpen(!open)}><Link to={"manageDirector"} >Manage Director</Link></li>
           ]
   
 

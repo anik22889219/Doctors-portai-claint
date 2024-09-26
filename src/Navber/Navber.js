@@ -13,7 +13,7 @@ const Navber = () => {
     <li onClick={()=> setOpen(!open)} key={1}><Link to="/">Home</Link></li>,
     <li onClick={()=> setOpen(!open)} key={2}><Link to="about">About</Link></li>,
     <li onClick={()=> setOpen(!open)} key={3}><Link to="appointment">Appointment</Link></li>,
-    <li onClick={()=> setOpen(!open)} key={4}><Link to="reviews">Reviews</Link></li>,
+    <li onClick={()=> setOpen(!open)} key={4}><Link to="director">Director</Link></li>,
     <li onClick={()=> setOpen(!open)} key={7}><Link to="contactus">Contact Us</Link></li>,
     <li onClick={()=> setOpen(!open)} key={9}>
       {

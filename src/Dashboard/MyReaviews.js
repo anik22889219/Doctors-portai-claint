@@ -5,7 +5,7 @@ const MyReaviews = () => {
         <div>
             <h1>this is reviews</h1>
         </div>
-    );
+    ); 
 };
 
 export default MyReaviews;
